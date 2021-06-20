@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: linear-gradient(120deg, rgba(220,237,248), rgb(199,221,236));
+  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -8,11 +10,12 @@
   }
 }
 
-.App {
-  background: linear-gradient(120deg, rgba(220,237,248), rgb(199,221,236));
-  min-height: 100vh;
+.Components-area {
+  display: flex;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-top: 1.5rem;
+
 }
 
 .App-link {

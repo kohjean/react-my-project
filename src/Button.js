@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 const OffButton = styled.div`
+  font-family: 'Century Gothic';
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +17,7 @@ const OffButton = styled.div`
 `
 
 const OnButton = styled.div`
+  font-family: 'Century Gothic';
   display: flex;
   justify-content: center;
   align-items: center;

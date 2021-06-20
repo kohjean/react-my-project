@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import './App.css';
 import { Button } from './Button';
+import { DropDownMenu } from './DropDownMenu';
 
 const BackgroundText = styled.p`
   position: absolute;
@@ -18,8 +19,9 @@ const BackgroundText = styled.p`
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="Components-area">
         <Button></Button>
+        <DropDownMenu></DropDownMenu>
       </header>
       <BackgroundText>components</BackgroundText>
     </div>
