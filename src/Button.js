@@ -9,7 +9,6 @@ const OffButton = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 25%;
-  background: #DCEDF8;
   box-shadow: 2px 2px 6px #BBC9D3 inset,
              -2px -2px 6px rgb(240,250,255) inset;
   user-select: none;
@@ -24,7 +23,6 @@ const OnButton = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 25%;
-  background: #DCEDF8;
   box-shadow: 2px 2px 6px #BBC9D3,
              -2px -2px 6px rgb(240,250,255);
   user-select: none;

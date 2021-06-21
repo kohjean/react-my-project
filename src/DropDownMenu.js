@@ -3,12 +3,16 @@ import styled from 'styled-components';
 import { ListItem } from './components/ListItem';
 
 const Container = styled.div`
-width: 12rem;
-border: 1px solid #FFF;
+  width: 12rem;
+  box-shadow: 2px 2px 6px #BBC9D3,
+              -2px -2px 6px rgb(240,250,255);
+  position: absolute;
+  right: 2rem;
 `
 
 const ToggleButton = styled.p`
   text-align: center;
+  font-size: 2rem;
 `
 
 
@@ -27,10 +31,7 @@ export const DropDownMenu = () => {
         }
       </div>
       {
-        showMenu === true
-        ?
-          <ListItem></ListItem>
-        : null
+        showMenu === true ? <ListItem /> : null
       }
     </Container>
   )

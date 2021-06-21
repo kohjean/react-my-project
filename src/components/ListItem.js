@@ -9,6 +9,8 @@ const menuItems = [
 const NonDotList = styled.ul`
   list-style: none;
   text-align: left;
+  font-size: 1.2rem;
+  line-height: 2rem;
 `
 
 export const ListItem = () => {
@@ -16,7 +18,7 @@ export const ListItem = () => {
     <NonDotList>
     {
       menuItems.map((item) => {
-        return <li>{ item }</li>
+        return <li>+ { item }</li>
       })
     }
     </NonDotList>
