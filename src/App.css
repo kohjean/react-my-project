@@ -12,10 +12,9 @@
 
 .Components-area {
   display: flex;
-  font-size: calc(10px + 2vmin);
   color: white;
   padding-top: 1.5rem;
-
+  position: relative;
 }
 
 .App-link {

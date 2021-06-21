@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { ConvexComponent } from './components/ConvexComponent';
+import { ConcaveComponent } from './components/ConcaveComponent';
 import styled from 'styled-components';
 
-const OffButton = styled.div`
+const OffButton = styled(ConcaveComponent)`
   font-family: 'Century Gothic';
   display: flex;
   justify-content: center;
@@ -9,14 +11,11 @@ const OffButton = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 25%;
-  background: #DCEDF8;
-  box-shadow: 2px 2px 6px #BBC9D3 inset,
-             -2px -2px 6px rgb(240,250,255) inset;
   user-select: none;
   font-size: 2rem;
 `
 
-const OnButton = styled.div`
+const OnButton = styled(ConvexComponent)`
   font-family: 'Century Gothic';
   display: flex;
   justify-content: center;
@@ -24,13 +23,8 @@ const OnButton = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 25%;
-  background: #DCEDF8;
-  box-shadow: 2px 2px 6px #BBC9D3,
-             -2px -2px 6px rgb(240,250,255);
   user-select: none;
   font-size: 2rem;
-  text-shadow: 2px 2px 6px #AFAFAF,
-              -2px -2px 6px #ECECEC;
 `
 
 export const Button = () => {

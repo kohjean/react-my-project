@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ListItem } from './components/ListItem';
+import { ConvexComponent } from './components/ConvexComponent';
 
-const Container = styled.div`
-width: 12rem;
-border: 1px solid #FFF;
+const Container = styled(ConvexComponent)`
+  width: 12rem;
+  position: absolute;
+  right: 2rem;
 `
 
 const ToggleButton = styled.p`
   text-align: center;
+  font-size: 2rem;
 `
 
 
@@ -27,10 +30,7 @@ export const DropDownMenu = () => {
         }
       </div>
       {
-        showMenu === true
-        ?
-          <ListItem></ListItem>
-        : null
+        showMenu === true ? <ListItem /> : null
       }
     </Container>
   )
