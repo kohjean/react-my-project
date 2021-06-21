@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { ListItem } from './components/ListItem';
+import { ConvexComponent } from './components/ConvexComponent';
 
-const Container = styled.div`
+const Container = styled(ConvexComponent)`
   width: 12rem;
-  box-shadow: 2px 2px 6px #BBC9D3,
-              -2px -2px 6px rgb(240,250,255);
   position: absolute;
   right: 2rem;
 `
