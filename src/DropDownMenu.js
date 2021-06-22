@@ -15,8 +15,9 @@ const ToggleButton = styled.p`
 `
 
 
-export const DropDownMenu = () => {
+export const DropDownMenu = ({ showComponentArray }) => {
   const [showMenu, setShowMenu] = useState(false);
+
   const toggleMenu = () => {
     const menuState = (showMenu === true) ? false : true;
     setShowMenu(menuState);
@@ -30,7 +31,7 @@ export const DropDownMenu = () => {
         }
       </div>
       {
-        showMenu === true ? <ListItem /> : null
+        showMenu === true ? <ListItem showComponentArray={showComponentArray}/> : null
       }
     </Container>
   )

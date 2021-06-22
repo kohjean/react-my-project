@@ -13,12 +13,19 @@ const NonDotList = styled.ul`
   line-height: 2rem;
 `
 
-export const ListItem = () => {
+const Item = styled.li`
+  cursor: pointer;
+  &::before {
+    content: '+ '
+  }
+`
+
+export const ListItem = ({showComponentArray}) => {
   return (
     <NonDotList>
     {
-      menuItems.map((item) => {
-        return <li>+ { item }</li>
+      menuItems.map((key, val) => {
+        return <Item key={ key } onClick={showComponentArray[val]}>{ key }</Item>
       })
     }
     </NonDotList>

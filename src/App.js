@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import './App.css';
 import { Button } from './Button';
@@ -17,11 +18,26 @@ const BackgroundText = styled.p`
 `
 
 function App() {
+  const [isButtonShow, setButtonShow] = useState(false);
+  const [isCatDisplayShow, setCatDisplay] = useState(false);
+
+  const showComponentArray = [
+    setButtonShow,
+    setCatDisplay,
+  ];
+
   return (
     <div className="App">
       <header className="Components-area">
-        <Button></Button>
-        <DropDownMenu></DropDownMenu>
+        {
+          isButtonShow &&
+            <Button />
+        }
+        {
+          isCatDisplayShow &&
+            <Button />
+        }
+        <DropDownMenu showComponentArray={showComponentArray}></DropDownMenu>
       </header>
       <BackgroundText>components</BackgroundText>
     </div>
