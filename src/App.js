@@ -31,7 +31,10 @@ function App() {
 
   return (
     <div className="App">
-      <header className="Components-area">
+      <header>
+
+      </header>
+      <body className="Components-area">
         {
           isButtonShow &&
             <Button />
@@ -45,8 +48,10 @@ function App() {
             <Button />
         } */}
         <DropDownMenu showComponentArray={showComponentArray}></DropDownMenu>
-      </header>
-      <BackgroundText>components</BackgroundText>
+      </body>
+      <footer>
+        <BackgroundText>components</BackgroundText>
+      </footer>
     </div>
   );
 }
