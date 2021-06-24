@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import { Button } from './Button';
 import { DropDownMenu } from './DropDownMenu';
+import { SearchForm } from './components/SearchForm';
 
 const BackgroundText = styled.p`
   position: absolute;
@@ -19,10 +20,12 @@ const BackgroundText = styled.p`
 
 function App() {
   const [isButtonShow, setButtonShow] = useState(false);
+  const [isSearchFormShow, setSearchForm] = useState(false);
   const [isCatDisplayShow, setCatDisplay] = useState(false);
 
   const showComponentArray = [
     setButtonShow,
+    setSearchForm,
     setCatDisplay,
   ];
 
@@ -34,9 +37,13 @@ function App() {
             <Button />
         }
         {
+          isSearchFormShow &&
+            <SearchForm />
+        }
+        {/* {
           isCatDisplayShow &&
             <Button />
-        }
+        } */}
         <DropDownMenu showComponentArray={showComponentArray}></DropDownMenu>
       </header>
       <BackgroundText>components</BackgroundText>
