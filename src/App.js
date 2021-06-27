@@ -4,6 +4,7 @@ import './App.css';
 import { Button } from './Button';
 import { DropDownMenu } from './DropDownMenu';
 import { SearchForm } from './components/SearchForm';
+import { CatDisplay } from './components/CatDisplay';
 
 const BackgroundText = styled.p`
   position: absolute;
@@ -43,10 +44,10 @@ function App() {
           isSearchFormShow &&
             <SearchForm />
         }
-        {/* {
+        {
           isCatDisplayShow &&
-            <Button />
-        } */}
+            <CatDisplay />
+        }
         <DropDownMenu showComponentArray={showComponentArray}></DropDownMenu>
       </body>
       <footer>
