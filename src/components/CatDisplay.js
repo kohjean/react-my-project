@@ -25,14 +25,14 @@ export const CatDisplay = () => {
     return res.data;
   }
 
-  const loadBreedImages = async () => {
+  const loadBreedImages = async (selectedBreed) => {
     let breed_images = await getCatsImagesByBreed(selectedBreed);
     setImages(breed_images);
   }
 
   const onBreedSelectChange = async (e) => {
     await setSelectedBreed(e.target.value);
-    await loadBreedImages();
+    await loadBreedImages(e.target.value);
   }
 
   useEffect(() => {
