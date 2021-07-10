@@ -4,6 +4,7 @@ const menuItems = [
   'Button',
   'SearchForm',
   'CatDisplay',
+  'Chatbot',
 ];
 
 const NonDotList = styled.ul`

@@ -11,7 +11,9 @@
 }
 
 .Components-area {
+  width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   color: white;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
