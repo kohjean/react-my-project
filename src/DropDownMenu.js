@@ -2,36 +2,55 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { ListItem } from './components/ListItem';
 import { ConvexComponent } from './components/ConvexComponent';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 const Container = styled(ConvexComponent)`
-  width: 12rem;
+  border-radius: 50%;
   position: absolute;
   right: 2rem;
 `
 
-const ToggleButton = styled.p`
-  text-align: center;
-  font-size: 2rem;
+const Drawer = styled(ConvexComponent)`
+  width: 12rem;
+  transition-duration: 0.6s;
+  position: absolute;
+  right: 0;
 `
 
+const Inivisible = styled.div`
+  width: 0;
+  display: none;
+`
 
-export const DropDownMenu = ({ showComponentArray }) => {
-  const [showMenu, setShowMenu] = useState(false);
+export const DropDownMenu = ({ stateHooks }) => {
+  const [open, setOpen] = useState(false);
 
-  const toggleMenu = () => {
-    const menuState = (showMenu === true) ? false : true;
-    setShowMenu(menuState);
+  const handleDrawerToggle = () => {
+    const menuState = (open === true) ? false : true;
+    setOpen(menuState);
   }
 
   return (
     <Container>
-      <div onClick={toggleMenu}>
+      <IconButton onClick={handleDrawerToggle} className={open ? 'open' : ''}>
         {
-          showMenu === true ? <ToggleButton>△</ToggleButton> : <ToggleButton>▽</ToggleButton>
+          open === true ? <ChevronRightIcon /> : <MenuIcon />
         }
+      </IconButton>
+      <div onClick={handleDrawerToggle}>
       </div>
       {
-        showMenu === true ? <ListItem showComponentArray={showComponentArray}/> : null
+        open === true
+          ?
+            <Drawer>
+              <ListItem stateHooks={stateHooks}/>
+            </Drawer>
+          :
+            <Inivisible>
+              <ListItem stateHooks={stateHooks}/>
+            </Inivisible>
       }
     </Container>
   )

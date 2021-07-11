@@ -31,7 +31,7 @@ function App() {
   const [isCatDisplayShow, setCatDisplay] = useState(false);
   const [isChatbotShow, setChatbot] = useState(false);
 
-  const showComponentArray = [
+  const stateHooks = [
     setButtonShow,
     setSearchForm,
     setCatDisplay,
@@ -59,7 +59,7 @@ function App() {
           isChatbotShow &&
             <Chatbot theme={{width: "180px"}}/>
         }
-        <DropDownMenu showComponentArray={showComponentArray}></DropDownMenu>
+        <DropDownMenu stateHooks={stateHooks}></DropDownMenu>
       </body>
       <footer>
         <BackgroundText>components</BackgroundText>

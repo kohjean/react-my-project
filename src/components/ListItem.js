@@ -21,12 +21,12 @@ const Item = styled.li`
   }
 `
 
-export const ListItem = ({showComponentArray}) => {
+export const ListItem = ({stateHooks}) => {
   return (
     <NonDotList>
     {
       menuItems.map((key, val) => {
-        return <Item key={ key } onClick={showComponentArray[val]}>{ key }</Item>
+        return <Item key={ key } onClick={stateHooks[val]}>{ key }</Item>
       })
     }
     </NonDotList>
