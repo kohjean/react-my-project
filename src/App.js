@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import media from "styled-media-query";
 import './App.css';
 import { Button } from './Button';
 import { DropDownMenu } from './DropDownMenu';
 import { SearchForm } from './components/SearchForm';
 import { CatDisplay } from './components/CatDisplay';
-import media from "styled-media-query";
-import { TalkBot } from "./components/TalkBot";
+import { Chatbot } from './components/Chatbot';
+
 
 const BackgroundText = styled.p`
   position: absolute;
@@ -31,7 +32,7 @@ function App() {
   const [isCatDisplayShow, setCatDisplay] = useState(false);
   const [isChatbotShow, setChatbot] = useState(false);
 
-  const showComponentArray = [
+  const stateHooks = [
     setButtonShow,
     setSearchForm,
     setCatDisplay,
@@ -57,9 +58,10 @@ function App() {
         }
         {
           isChatbotShow &&
-            <TalkBot theme={{width: "180px"}}/>
+            <Chatbot theme={{width: "180px"}}/>
         }
-        <DropDownMenu showComponentArray={showComponentArray}></DropDownMenu>
+        <DropDownMenu stateHooks={stateHooks}></DropDownMenu>
+
       </body>
       <footer>
         <BackgroundText>components</BackgroundText>
