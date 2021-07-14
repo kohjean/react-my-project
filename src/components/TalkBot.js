@@ -10,12 +10,12 @@ export const TalkBot = (props) => {
   const setReply = props.setReply; // APIからのレスポンスをセットする
 
   const formdata = new FormData();
-
   formdata.append('apikey', process.env.REACT_APP_A3RT_API_KEY);
   formdata.append('query', text);
 
   const talkToBot = async (e) => {
     e.preventDefault();
+    setReply('・・・');
     fetch('https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk', {
       method: 'post',
       body: formdata,
