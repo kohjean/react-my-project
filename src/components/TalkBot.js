@@ -10,7 +10,6 @@ export const TalkBot = (props) => {
   const setReply = props.setReply; // APIからのレスポンスをセットする
 
   const formdata = new FormData();
-
   formdata.append('apikey', process.env.REACT_APP_A3RT_API_KEY);
   formdata.append('query', text);
 

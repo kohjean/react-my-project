@@ -8,7 +8,6 @@ import { SearchForm } from './components/SearchForm';
 import { CatDisplay } from './components/CatDisplay';
 import { Chatbot } from './components/Chatbot';
 
-
 const BackgroundText = styled.p`
   position: absolute;
   top: 50%;
@@ -61,7 +60,6 @@ function App() {
             <Chatbot theme={{width: "180px"}}/>
         }
         <DropDownMenu stateHooks={stateHooks}></DropDownMenu>
-
       </body>
       <footer>
         <BackgroundText>components</BackgroundText>
