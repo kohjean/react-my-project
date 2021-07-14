@@ -15,6 +15,7 @@ export const TalkBot = (props) => {
 
   const talkToBot = async (e) => {
     e.preventDefault();
+    setReply('・・・');
     fetch('https://api.a3rt.recruit-tech.co.jp/talk/v1/smalltalk', {
       method: 'post',
       body: formdata,
