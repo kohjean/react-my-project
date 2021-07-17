@@ -9,7 +9,6 @@ const Container = styled(ConcaveComponent)`
   align-items: center;
   width: 12rem;
   border-radius: 4px;
-  margin-left: 2rem;
 `
 
 export const SearchForm = () => {
