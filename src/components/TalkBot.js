@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import { SpeechInput } from './SpeechInput';
 
-const Form = styled.form`
-  display: flex;
+const Button = styled.button`
+  width: 50%;
+`
+const TextArea = styled.textarea`
+  width: 100%;
+  box-sizing: border-box;
 `
 
 export const TalkBot = (props) => {
@@ -27,9 +32,14 @@ export const TalkBot = (props) => {
   }
 
   return (
-    <Form onSubmit={(e) => talkToBot(e)}>
-      <input type="text" value={text} onChange={(e) => setText( e.target.value )}></input>
-      <button type="submit">🗣</button>
-    </Form>
+    <form onSubmit={(e) => talkToBot(e)}>
+      <TextArea rows="3" value={text} onChange={(e) => setText( e.target.value )}></TextArea>
+      <Button type="submit">✉️</Button>
+      <SpeechInput
+        text={text}
+        setText={setText}
+        setReply={setReply}
+      />
+    </form>
   )
 }
