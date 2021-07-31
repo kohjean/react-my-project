@@ -36,7 +36,6 @@ export const TalkBot = (props) => {
       <TextArea rows="3" value={text} onChange={(e) => setText( e.target.value )}></TextArea>
       <Button type="submit">✉️</Button>
       <SpeechInput
-        text={text}
         setText={setText}
         setReply={setReply}
       />

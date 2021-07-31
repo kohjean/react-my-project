@@ -6,7 +6,6 @@ const Button = styled.button`
 `
 
 export const SpeechInput = (props) => {
-  const text = props.text; // state
   const setText = props.setText; // APIに渡すテキストをセットする
   const setReply = props.setReply; // APIからのレスポンスをセットする
 
@@ -17,7 +16,8 @@ export const SpeechInput = (props) => {
   
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   const recognition = new SpeechRecognition();
-  recognition.lang = 'ja-JP';  
+  recognition.lang = 'ja-JP';
+  recognition.interimResults = true;
 
   recognition.onaudiostart = () => {
     setSpeech('🗣');
@@ -27,8 +27,15 @@ export const SpeechInput = (props) => {
   recognition.onresult = (event) => {
     setSpeech('🎤');
     setText(event.results[0][0].transcript);
-    formdata.append('query', event.results[0][0].transcript);
-    SpeechToBot();
+    // 発言が終了したかどうか
+    if (event.results[0].isFinal) {
+      formdata.append('query', event.results[0][0].transcript);
+      SpeechToBot();
+    }
+  }
+
+  recognition.onerror = (event) => {
+    console.log('error: ' + event);
   }
   
   const SpeechToBot = async () => {
@@ -44,6 +51,8 @@ export const SpeechInput = (props) => {
   }
 
   return (
-    <Button type="button" onClick={() => recognition.start()}>{ speech }</Button>
+    <>
+      <Button type="button" onClick={() => recognition.start()}>{ speech }</Button>
+    </>
   )
 }
